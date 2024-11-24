@@ -1,0 +1,104 @@
+Create Both
+Sync Full
+Remove Both
+Expunge Both
+
+#######################
+####### modelo ########
+#######################
+
+IMAPAccount modelo
+Host imap.gmail.com
+User navajas@modelo.solutions
+PassCmd "oama access navajas@modelo.solutions"
+AuthMechs XOAUTH2
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+Timeout 360
+
+IMAPStore modelo-remote
+Account modelo
+
+MaildirStore modelo-local
+SubFolders Verbatim
+Path ~/.mail/modelo/
+Inbox ~/.mail/modelo/Inbox
+
+Channel modelo-labels
+Far :modelo-remote:
+Near :modelo-local:
+Patterns * ![Gmail]* !INBOX !Archive* !Drafts !Sent* !Spam !Trash !zzzzzzz*
+
+Channel modelo-inbox
+Far ":modelo-remote:INBOX"
+Near ":modelo-local:Inbox"
+
+Channel modelo-sent
+Far ":modelo-remote:[Gmail]/Sent Mail"
+Near ":modelo-local:Sent"
+Patterns *
+
+Channel modelo-trash
+Far ":modelo-remote:[Gmail]/Trash"
+Near ":modelo-local:Trash"
+
+Channel modelo-drafts
+Far ":modelo-remote:[Gmail]/Drafts"
+Near ":modelo-local:Drafts"
+
+Group modelo
+Channel modelo-inbox
+Channel modelo-drafts
+Channel modelo-trash
+Channel modelo-sent
+Channel modelo-labels
+
+Group modelo-fast
+Channel modelo-inbox
+Channel modelo-labels
+
+####################
+####### ICCA #######
+####################
+
+IMAPAccount icca
+Host outlook.office365.com
+User pnavajas@iccaweb.com
+PassCmd "oama access pnavajas@iccaweb.com"
+AuthMechs XOAUTH2
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+Timeout 360
+
+IMAPStore icca-remote
+Account icca
+
+MaildirStore icca-local
+SubFolders Verbatim
+Path ~/.mail/icca/
+Inbox ~/.mail/icca/Inbox
+
+Channel icca-folders
+Far :icca-remote:
+Near :icca-local:
+Patterns * !INBOX !Archive* !Drafts !Sent* !Spam !Trash*
+
+Channel icca-inbox
+Far ":icca-remote:INBOX"
+Near ":icca-local:Inbox"
+
+Channel icca-sent
+Far ":icca-remote:Sent items"
+Near ":icca-local:Sent"
+Patterns *
+
+Group icca
+Channel icca-inbox
+Channel icca-folders
+Channel icca-drafts
+Channel icca-trash
+Channel icca-sent
+
+Group icca-fast
+Channel icca-inbox
+Channel icca-folders

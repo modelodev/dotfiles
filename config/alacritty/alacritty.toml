@@ -1,0 +1,72 @@
+  import = ["~/.config/alacritty/nordfox.toml"]
+  
+  [window]
+  #decorations = "None"
+  decorations       = "Buttonless"
+  opacity           = 1
+  resize_increments = true
+  dynamic_padding   = true
+  #  dimensions        = { lines = 28, columns = 120 }
+  padding           = { x = 1 }
+  
+  [font]
+  size = 10
+  
+      [font.bold]
+      family = "SauceCodeProNerdFont"
+      # family = "Iosevka Term Slab"
+      style = "Bold"
+  
+      [font.bold_italic]
+      family = "SauceCodeProNerdFont"
+      # family = "Iosevka Term Slab"
+      style = "Bold Italic"
+  
+      [font.italic]
+      family = "SauceCodeProNerdFont"
+      # family = "Iosevka Term Slab"
+      style = "Italic"
+  
+      [font.normal]
+      family = "SauceCodeProNerdFont"
+      # family = "Iosevka Term Slab"
+      style = "Regular"
+  
+  [cursor]
+  style            = "Block"
+  unfocused_hollow = true
+  
+  [scrolling]
+  history = 100000
+  
+  [selection]
+  save_to_clipboard = true
+  
+  [mouse]
+  hide_when_typing = true
+  
+  [[hints.enabled]]
+  regex           = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+  command         = "xdg-open"
+  post_processing = true
+  mouse           = { enabled = true, mods = "Control" }
+  
+  [terminal]
+  osc52 = "CopyPaste"
+  
+  [keyboard]
+  bindings = [
+      { key = "Space", mods = "Control|Shift", action = "None" },
+      { key = "f", mods = "Control|Shift", chars = "v $(!! -l)" },
+      { key = "l", mods = "Control|Shift", action = "ClearHistory" },
+      { key = "Return", mods = "Shift", chars = "\u001b\u000d" },     # Esc+Enter: Aider multiline
+  
+      # { key = "o", mods = "Control|Shift", action = "ToggleViMode" },
+      { key = "o", mods = "Super", action = "ToggleViMode" },
+      { key = "a", mode = "Vi", action = "ToggleViMode" },
+      { key = "Escape", mode = "Vi", action = "ToggleViMode" },
+  
+      { key = "n", mods = "Control|Shift", action = "CreateNewTab" },
+      { key = "h", mods = "Control|Shift", action = "SelectPreviousTab" },
+      { key = "l", mods = "Control|Shift", action = "SelectNextTab" },
+  ]

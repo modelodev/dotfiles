@@ -1,0 +1,25 @@
+# Default account
+source ~/.config/mutt/molocai.muttrc
+
+source "~/.config/mutt/modelo.solutions.gmail"
+
+# Folder hooks
+folder-hook 'modelo.solutions.gmail' 'source ~/.config/mutt/modelo.solutions.gmail'
+folder-hook 'iccaweb.com.office365' 'source ~/.config/mutt/iccaweb.com.office365'
+
+set sort = threads 
+
+# Macros to switch accounts
+macro index <f2> "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/modelo.solutions.gmail<enter><sync-mailbox><change-folder>!<enter>"
+macro index <f3> "<enter-command>unmailboxes *<enter><enter-command>source ~/.config/mutt/iccaweb.com.office365<enter><sync-mailbox><change-folder>!<enter>"
+
+# Mappings
+## Fetch mail shortcut
+bind index G imap-fetch-mail
+
+# General settings
+set editor='vim'
+set reverse_alias
+bind editor <Tab> complete-query
+set query_command = "ugrep -jP -m 5 --color=never '%s' ~/.cache/maildir-rank-addr/addressbook.tsv"
+

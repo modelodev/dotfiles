@@ -1,0 +1,88 @@
+URxvt*font: xft:SauceCodeProNerdFont:size=10
+!sourcecodepro:size=10
+
+URxvt*reverseVideo:        false
+!URxvt*fading:   70
+!URxvt*fadecolor:  #71C5F4
+URxvt*background:   #000000
+URxvt*foreground:   #D3D3D3
+!URxvt*shading:  20
+URxvt*loginShell: True
+URxvt*borderLess: false
+URxvt*inheritPixmap: False
+URxvt*scrollBar: False 
+URxvt*cutchars: `"()'*<>[]{|}
+!URxvt*termName: rxvt-unicode
+!URxvt.mapAlert:   True
+!URxvt.visualBell: False
+
+! Plugin stuff
+!URxvt.perl-ext-common: default,matcher,font-size
+!URxvt-keysym.C-Up: font-size:increase
+! ,-option-popup,-selection-popup,-readline
+!URxvt*perl-ext: 
+!URxvt.matcher.button:     1
+!URxvt*url-launcher: google-chrome-stable
+!URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+
+!! Colors
+!!black
+!URxvt*color0:         #676767
+!URxvt*color8:         #757575
+!!red
+!URxvt*color1:         #EA6868
+!URxvt*color9:         #FF7272
+!!green
+!URxvt*color2:         #ABCB8D
+!URxvt*color10:          #AFD78A
+!!yellow
+!URxvt*color3:         #E8AE5B
+!URxvt*color11:          #FFA75D
+!!blue
+!URxvt*color4:         #71C5F4
+!URxvt*color12:          #67CDE9
+!!magenta
+!URxvt*color5:         #E2BAF1
+!URxvt*color13:          #ECAEE9
+!!cyan
+!URxvt*color6:         #21F1EA
+!URxvt*color14:          #36FFFC
+!!white
+!URxvt*color7:         #F1F1F1
+!URxvt*color15:          #FFFFFF
+
+!color stuff
+!URxvt*tintColor:    #dfdfdf
+URxvt.cursorColor:  #89B83F
+URxvt.pointerColor: #89B83F
+
+
+
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2

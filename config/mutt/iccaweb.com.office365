@@ -1,0 +1,34 @@
+set imap_user = "pnavajas@iccaweb.com"
+set from = "pnavajas@iccaweb.com"
+set realname = "Pedro Navajas Modelo"
+set ssl_use_sslv3=yes
+
+# IMAP
+set folder = "imaps://outlook.office365.com/"
+set spoolfile= +INBOX
+set imap_authenticators = "xoauth2"
+set imap_oauth_refresh_command = "oama access pnavajas@iccaweb.com"
+
+# SMTP
+set hostname = "iccaweb.com"
+set smtp_url = "smtp://pnavajas@iccaweb.com@smtp.office365.com:587/"
+set ssl_force_tls = yes
+set ssl_starttls  = "yes"
+set smtp_authenticators = ${imap_authenticators}
+set smtp_oauth_refresh_command = ${imap_oauth_refresh_command}
+
+# Folders
+set my_drafts="Borradores"
+set my_sent="Elementos enviados"
+set my_trash="Elementos eliminados"
+
+set postponed = +$my_drafts
+set record = +$my_sent
+set trash = +$my_trash
+
+# Mailboxes
+mailboxes =INBOX =Elementos\ Enviados =Elementos\ Eliminados =Borradores
+
+set header_cache = ~/.mutt/icca/cache/headers
+set message_cachedir = ~/.mutt/icca/cache/bodies
+set certificate_file = ~/.mutt/icca/certificates

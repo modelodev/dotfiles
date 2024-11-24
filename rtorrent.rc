@@ -1,0 +1,22 @@
+# Global upload and download rate in KiB. "0" for unlimited.
+#throttle.global_down.max_rate.set_kb = 0
+#throttle.global_up.max_rate.set_kb = 750
+
+# Default directory to save the downloaded torrents.
+directory.default.set = /home/yo/usr/torrent/
+
+# Set whetever the client should try to connect to UDP trackers.
+#use_udp_trackers = yes
+
+# Default session directory. When restarting rtorrent, the torrents from this directory will be restarted.
+session.path.set = /home/yo/usr/torrent/.unfinished
+
+# A watch directory downloading to the default location
+schedule = watch_directory_3,5,300,load_start=/home/yo/usr/torrent/.torrents/*.torrent
+
+#Selecting a port range
+port_range = 49166-49166
+
+#DHT support
+dht = auto
+dht_port = 6881

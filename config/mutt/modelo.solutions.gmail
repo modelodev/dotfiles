@@ -1,0 +1,30 @@
+set imap_user = "navajas@modelo.solutions"
+set smtp_url = "smtp://navajas@modelo.solutions@smtp.gmail.com:587/"
+set from = "navajas@modelo.solutions"
+set realname = "Pedro Navajas Modelo"
+
+# IMAP
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set imap_authenticators = "xoauth2"
+set imap_oauth_refresh_command = "oama access navajas@modelo.solutions"
+
+# SMTP
+set smtp_authenticators = ${imap_authenticators}
+set smtp_oauth_refresh_command = ${imap_oauth_refresh_command}
+
+# Folders
+set my_drafts = "[Gmail]/Drafts"
+set my_sent = "[Gmail]/Sent"
+set my_trash = "[Gmail]/Trash"
+
+set postponed = +$my_drafts
+set record = +$my_sent
+set trash = +$my_trash
+
+# Mailboxes
+mailboxes =INBOX =Sent =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash =nosolosoftware
+
+set header_cache = ~/.mutt/modelo/cache/headers
+set message_cachedir = ~/.mutt/modelo/cache/bodies
+set certificate_file = ~/.mutt/modelo/certificates
